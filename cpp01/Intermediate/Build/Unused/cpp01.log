@@ -1,0 +1,15 @@
+﻿  Using 'git status' to determine working set for adaptive non-unity build (E:\easyprogstudy_git\ue4cppS01).
+  Building cpp01Editor...
+  Using Visual Studio 2019 14.29.30151 toolchain (C:\Program Files (x86)\Microsoft Visual Studio\2019\BuildTools\VC\Tools\MSVC\14.29.30133) and Windows 10.0.22621.0 SDK (C:\Program Files (x86)\Windows Kits\10).
+  Distributing 1 action to XGE
+  
+  Build ID: {338E575B-37A4-4BEA-8C23-185CE59EE086}
+  
+  --------------------Project: Default-------------------------------------------
+  cpp01Editor.target (0:00.43 at +0:00)
+  ---------------------- Done ----------------------
+  
+      Rebuild All: 1 succeeded, 0 failed, 0 skipped
+  
+  Total time in XGE executor: 0.92 seconds
+  Total execution time: 2.19 seconds
