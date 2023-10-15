@@ -5,6 +5,7 @@
 
 // Sets default values
 AMyActor::AMyActor()
+	: speed(1.0f)
 {
  	// Set this actor to call Tick() every frame.  You can turn this off to improve performance if you don't need it.
 	PrimaryActorTick.bCanEverTick = true;
@@ -26,5 +27,14 @@ void AMyActor::Tick(float DeltaTime)
 {
 	Super::Tick(DeltaTime);
 
+	FVector newLocation = GetActorLocation();
+	newLocation.Y += speed;
+	SetActorLocation(newLocation);
+}
+
+
+int AMyActor::getPlus(int a, int b)
+{
+	return a + b;
 }
 
