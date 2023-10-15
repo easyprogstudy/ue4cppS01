@@ -6,6 +6,7 @@
 
 // Sets default values
 ALampActor::ALampActor()
+	:m_nLightIntensity(1000.0f)
 {
  	// Set this actor to call Tick() every frame.  You can turn this off to improve performance if you don't need it.
 	PrimaryActorTick.bCanEverTick = true;
@@ -29,6 +30,8 @@ void ALampActor::BeginPlay()
 {
 	Super::BeginPlay();
 	m_pLight->SetVisibility(false);
+	m_pLight->SetIntensity(m_nLightIntensity);
+	
 }
 
 // Called every frame
@@ -58,3 +61,13 @@ void ALampActor::OnOverlapEnd(UPrimitiveComponent * overlappedComp, AActor * oth
 		UE_LOG(LogTemp, Warning, TEXT("OnOverlap End!!!"));
 	}
 }
+
+
+#if WITH_EDITOR
+void ALampActor::PostEditChangeProperty(FPropertyChangedEvent& PropertyChangedEvent)
+{
+	m_pLight->SetIntensity(m_nLightIntensity);
+
+	Super::PostEditChangeProperty(PropertyChangedEvent);
+}
+#endif

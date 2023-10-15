@@ -1,4 +1,4 @@
-// Fill out your copyright notice in the Description page of Project Settings.
+﻿// Fill out your copyright notice in the Description page of Project Settings.
 
 #pragma once
 
@@ -38,5 +38,10 @@ public:
 
 	UPROPERTY()
 	UBoxComponent* m_pBox;
+
+	UPROPERTY(EditAnywhere, Category="조명", DisplayName="빛의 세기")
+	float m_nLightIntensity;
+
+	virtual void PostEditChangeProperty(FPropertyChangedEvent& PropertyChangedEvent) override;
 
 };
