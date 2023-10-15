@@ -9,6 +9,7 @@
 
 #include "LampActor.generated.h"
 
+DECLARE_EVENT(ALampActor, FLightSetEvent)
 
 UCLASS()
 class CPP02_API ALampActor : public AActor
@@ -43,5 +44,18 @@ public:
 	float m_nLightIntensity;
 
 	virtual void PostEditChangeProperty(FPropertyChangedEvent& PropertyChangedEvent) override;
+
+	UFUNCTION(Category="Test Tool")
+	void SetLight(bool bSet);
+
+
+public:
+	FLightSetEvent& OnLigthSet()
+	{
+		return lightSetEvent;
+	}
+
+private:
+	FLightSetEvent lightSetEvent;
 
 };

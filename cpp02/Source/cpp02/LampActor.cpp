@@ -48,6 +48,8 @@ void ALampActor::OnOverlapBegin(UPrimitiveComponent* overlappedComp, AActor * ot
 	{
 		m_pLight->SetVisibility(true);
 		UE_LOG(LogTemp, Warning, TEXT("OnOverlap Begin!"));
+
+		lightSetEvent.Broadcast();
 	}
 }
 
@@ -71,3 +73,9 @@ void ALampActor::PostEditChangeProperty(FPropertyChangedEvent& PropertyChangedEv
 	Super::PostEditChangeProperty(PropertyChangedEvent);
 }
 #endif
+
+
+void ALampActor::SetLight(bool bSet)
+{
+	m_pLight->SetVisibility(bSet);
+}
