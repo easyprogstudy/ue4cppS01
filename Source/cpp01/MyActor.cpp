@@ -19,6 +19,9 @@ AMyActor::AMyActor()
 void AMyActor::BeginPlay()
 {
 	Super::BeginPlay();
+
+	UE_LOG(LogBlueprint, Warning, TEXT("in BeginPlay. speed = %f"), speed);
+	GEngine->AddOnScreenDebugMessage(-1, 5.0f, FColor::Yellow, TEXT("in BeginPlay"));
 	
 }
 
